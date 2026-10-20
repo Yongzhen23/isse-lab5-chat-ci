@@ -360,7 +360,7 @@ def delete_message(message_id):
     if record is None:
         return jsonify({"error": f"id 为 {message_id} 的聊天记录不存在"}), 404
 
-    conversation["messages"].remove(record)
+    # Lab5 failure experiment: intentionally leave the record in place.
     save_data()
     return jsonify({"deleted_id": message_id})
 
